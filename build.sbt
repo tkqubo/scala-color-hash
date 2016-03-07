@@ -16,7 +16,7 @@ javaOptions in Test ++= Seq(
   s"-Djava.util.Arrays.useLegacyMergeSort=true"
 )
 
-initialCommands := "import com.github.tkqubo.color_hash._"
+initialCommands := "import com.github.tkqubo.colorHash._"
 
 // sbt publish
 publishArtifact in Test := false
