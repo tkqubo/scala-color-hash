@@ -15,7 +15,7 @@ case class ColorHash(
     val S: Double = saturation((hashedValue % saturation.length).toInt)
     hashedValue = hashedValue / saturation.length
     val L: Double = lightness((hashedValue % lightness.length).toInt)
-    Hsl(hue = H, lightness = L, saturation = S)
+    Hsl(hue = H, saturation = S, lightness = L)
   }
 
   def rgb(text: String): Rgb = hsl(text).toRgb

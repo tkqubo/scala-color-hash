@@ -1,10 +1,6 @@
 package com.github.tkqubo.colorHash
 
-case class Hsl(
-  hue: Long,
-  lightness: Double,
-  saturation: Double
-) {
+case class Hsl(hue: Long, saturation: Double, lightness: Double) {
   def toRgb: Rgb = {
     val normalizedHue: Double = hue.toDouble / 360.0d
     val q: Double = if (lightness < 0.5d) lightness * (1.0d + saturation) else lightness + saturation - lightness * saturation
