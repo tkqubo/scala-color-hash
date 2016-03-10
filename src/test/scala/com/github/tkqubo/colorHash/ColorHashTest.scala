@@ -39,41 +39,9 @@ class ColorHashTest extends Specification {
       }
 
       "pass with custom parameters" in {
-        val instance = ColorHash(Seq(0.0, 0.5), Seq(0.1, 0.2), _.length)
+        val instance = ColorHash(Seq(0.1, 0.2), Seq(0.0, 0.5), _.length)
         instance.lightness === Seq(0.0, 0.5)
         instance.saturation === Seq(0.1, 0.2)
-        instance.hash("1234567890") === 10L
-      }
-    }
-
-    "fromLightness" should {
-      "pass without hash method as a parameter" in {
-        val instance: ColorHash = ColorHash.fromLightness(0.2)
-        instance.lightness === Seq(0.2)
-        instance.saturation === ColorHash.defaultParam
-        instance.hash must beSameMethod(ColorHash.defaultHash)
-      }
-
-      "pass with hash method as a parameter" in {
-        val instance: ColorHash = ColorHash.fromLightness(0.2, _.length)
-        instance.lightness === Seq(0.2)
-        instance.saturation === ColorHash.defaultParam
-        instance.hash("1234567890") === 10L
-      }
-    }
-
-    "fromSaturation" should {
-      "pass without hash method as a parameter" in {
-        val instance: ColorHash = ColorHash.fromSaturation(0.2)
-        instance.lightness === ColorHash.defaultParam
-        instance.saturation === Seq(0.2)
-        instance.hash must beSameMethod(ColorHash.defaultHash)
-      }
-
-      "pass with hash method as a parameter" in {
-        val instance: ColorHash = ColorHash.fromSaturation(0.2, _.length)
-        instance.lightness === ColorHash.defaultParam
-        instance.saturation === Seq(0.2)
         instance.hash("1234567890") === 10L
       }
     }
