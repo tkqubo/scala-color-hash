@@ -1,8 +1,8 @@
 name := "color-hash"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
-val specs2Ver = "3.6.5"
+val specs2Ver = "3.7.2"
 
 
 libraryDependencies ++= Seq(
