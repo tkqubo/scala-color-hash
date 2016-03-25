@@ -1,3 +1,5 @@
+organization := "com.github.tkqubo"
+
 name := "color-hash"
 
 scalaVersion := "2.11.8"
