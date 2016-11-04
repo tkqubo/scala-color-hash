@@ -1,17 +1,15 @@
 organization := "com.github.tkqubo"
-
 name := "color-hash"
+scalaVersion := "2.12.0"
+crossScalaVersions := Seq("2.11.8", "2.12.0")
 
-scalaVersion := "2.11.8"
-
-val specs2Ver = "3.7.2"
-
+val specs2Ver = "3.8.6"
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % specs2Ver % "test",
-  "org.specs2" %% "specs2-matcher" % specs2Ver % "test",
-  "org.specs2" %% "specs2-matcher-extra" % specs2Ver % "test",
-  "org.specs2" %% "specs2-mock" % specs2Ver % "test"
+  "org.specs2" %% "specs2-core"           % specs2Ver % Test,
+  "org.specs2" %% "specs2-matcher"        % specs2Ver % Test,
+  "org.specs2" %% "specs2-matcher-extra"  % specs2Ver % Test,
+  "org.specs2" %% "specs2-mock"           % specs2Ver % Test
 )
 
 javaOptions in Test ++= Seq(
